@@ -16,9 +16,9 @@ async function showAvailableClasses(){
     allClass.forEach((item)=>{
         card.innerHTML += `
         <div class='card'>
-            <h2 class='className'>${item.courseValue}</h2>
-            <p class='teacherName'>${item.teacherName}</p>
-            <button onclick="openAttendanceSec('${item.id}')"> Attendance Section </button>
+            <h2 class='className text-center'>${item.courseValue}</h2>
+            <p class='teacherName text-center'>${item.teacherName}</p>
+            <button class='btn btn-success' onclick="openAttendanceSec('${item.id}')"> Attendance Section </button>
         </div>
         
         `

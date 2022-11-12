@@ -43,8 +43,8 @@ async function getClassInfo(){
             <td>${item.section}</td>
             <td>${item.schedule}</td>
             <td>${item.classStart} to ${item.classEnd}</td>
-            <td> <button onclick="editClass('${item.id}')">Edit</button>
-            <button onclick="deleteClass('${item.id}')">Delete</button> </td>
+            <td> <button class='btn btn-success' onclick="editClass('${item.id}')">Edit</button>
+            <button class='btn btn-danger' onclick="deleteClass('${item.id}')">Delete</button> </td>
         </tr>
         `
   })

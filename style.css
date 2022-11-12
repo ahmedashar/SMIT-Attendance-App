@@ -6,7 +6,7 @@ html {
 }
 .main_container {
   height: 100vh;
-  background-color: grey;
+  background-color: white;
 }
 
 .nav_main {
@@ -22,14 +22,17 @@ html {
   width: 10rem;
 }
 .app_name {
-  font-size: 3rem;
+  font-size: 2rem;
+  color: royalblue;
 }
 /* section */
 .welcome_text {
   font-size: 5rem;
+  color: rgb(7, 60, 7);
 }
 .slogan_text {
   font-size: 4rem;
+  color: rgb(33, 33, 94);
 }
 
 /* admin login form */
@@ -53,6 +56,7 @@ html {
   height: 4rem;
   font-size: 3rem;
   border: 1px solid black;
+  border-radius: 0.5rem;
 }
 .form_control input.error {
   border: 1px solid red;
@@ -75,6 +79,7 @@ html {
   bottom: 0;
   font-size: 1.5rem;
   color: red;
+  left: 17rem;
 }
 
 /* X-Small devices (portrait phones, less than 576px) */

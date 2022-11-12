@@ -26,22 +26,24 @@
 
 
 
-    <h1 class="text-center">Attendance Application</h1>
+    <h1 class="text-center mt-5" style="color: rgb(24, 24, 94) ;">Attendance Application</h1>
     <div class="container-fluid">
-        <div class="container">
-            <div class="add_class_container">
-                <button onclick="gotoCreateClass()">Create Class</button>
-            </div>
+        <div class="container card_container">
+            <h2>Manage the ClassRoom ----></h2>
 
 
-            <div class="enroll_student">
-                <button onclick="gotoEnrollStudent()">Enroll Students</button>
-            </div>
+            <button class="btn btn-dark manageClass" onclick="gotoCreateClass()">Manage Class</button>
+
+        </div>
+
+        <div class="container enroll_student card_container">
+            <h2>Manage the Enroll Students ----></h2>
+            <button class="btn btn-dark manageClass" onclick="gotoEnrollStudent()">Enroll Students</button>
         </div>
     </div>
 
     <!-- attendance -->
-    <h2 class="text-center">Attendance Portal</h2>
+    <h1 class="text-center mt-5 pt-5" style="color: rgb(24, 24, 94) ;">Attendance Portal</h1>
     <div class="container card_container" id="cardContainer">
         <!-- <div class="card">
             <img id="bannerImg" src="../images/graphicDes.jpeg" alt="">

@@ -29,7 +29,7 @@
         <div class="form_container">
             <div class="mb-3">
                 <label for="studentName" class="form-label">Student Name</label>
-                <input type="text" class="form-control" id="studentName" placeholder="name">
+                <input type="text" class="form-control" id="studentName" placeholder="Student Name">
             </div>
             <div class="mb-3">
                 <label for="fatherName" class="form-label">Father Name</label>
@@ -68,11 +68,11 @@
                 <option value="digital">digital marketing</option> -->
             </select>
 
-            <button id="enrollStudentBtn" onclick="enrollStudentInDB()">Enroll Student</button>
+            <button id="enrollStudentBtn" class="btn btn-primary" onclick="enrollStudentInDB()">Enroll Student</button>
         </div>
     </div>
-
-    <div class="container display_container">
+    <hr>
+    <div class="container display_container mt-5">
         <h1 class="text-center">Available Students</h1>
         <div class="table" id="table">
             <table class="table">

@@ -15,17 +15,24 @@ html {
   align-items: center;
 }
 .smit-logo {
-  width: 10rem;
+  width: 7rem;
 }
 .app_name {
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 /* nav end */
+.card_container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
 
-.add_class_container {
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
+.manageClass {
+  width: 200px;
+  height: 50px;
+}
 /* card */
 .bannerImg {
   width: 100%;
