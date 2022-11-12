@@ -1,6 +1,6 @@
 
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
-  import { getAuth } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
+  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
   import { getFirestore } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-firestore.js";
   import { getStorage } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-storage.js";
   
@@ -18,3 +18,11 @@
   const auth = getAuth(app);
   const db = getFirestore(app);
   const storage = getStorage(app);
+
+
+
+function firebaseSignIn(email,password){
+    return signInWithEmailAndPassword(auth, email, password)
+}
+
+export{firebaseSignIn}

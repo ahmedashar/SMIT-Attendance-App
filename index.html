@@ -20,8 +20,57 @@
 </head>
 
 <body>
+    <!-- navbar -->
+    <div class="container-fluid main_container">
 
-    <h1>Attendance Application</h1>
+        <div class="container-fluid nav_main">
+            <div class="container nav_items_container">
+                <img class="smit-logo" src="./images/logo-smit.png" alt="">
+                <h2 class="app_name">SMIT Attendance Application</h2>
+                <!-- <button id="login_btn">Log In</button> -->
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div class="section text-center mt-5 pt-5">
+                <h1 class="welcome_text">Welcome to Attendance Application</h1>
+                <p class="slogan_text">Saylani Mass IT Training Program</p>
+            </div>
+        </div>
+
+        <div class="container login_form_main">
+            <div class="admin_login">
+
+                <h2 class="text-center mt-3">ADMIN LOGIN</h2>
+
+                <div class="form_fields_container">
+
+                    <div class="form_container">
+                        <div class="form_control">
+                            <label for="admin_email">Email</label>
+                            <input type="email" id="admin_email">
+                        </div>
+                        <div class="form_control mt-5">
+                            <label for="admin_password">Password</label>
+                            <input type="password" id="admin_password">
+                        </div>
+                        <p id="error_msg"></p>
+
+                        <button id="login_btn" class="mt-5" onclick="loginAdmin()">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
 
 
 
