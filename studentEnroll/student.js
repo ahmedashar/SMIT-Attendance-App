@@ -1,6 +1,6 @@
-import {getClassFromFirebase ,uploadImage, enrollStudentFirebase} from '../firebase.js'
+import {getClassFromFirebase ,uploadImage, enrollStudentFirebase , getStudentFromDb} from '../firebase.js'
 
-
+showStudentData();
 window.getAvailableClass = async function(){
   const allClass = await getClassFromFirebase()
   console.log(allClass)
@@ -42,6 +42,24 @@ window.enrollStudentInDB = async function(){
 
 }
 
-// <!-- <option value="web">web and mobile</option>
-// <option value="graphic">graphic designing</option>
-// <option value="digital">digital marketing</option> -->
+async function showStudentData(){
+    const allStudent = await getStudentFromDb();
+    let tableBody = document.getElementById('tableBody');
+
+ 
+    allStudent.forEach((item,index)=>{
+        console.log(item)
+        tableBody.innerHTML += `  <tr>
+        <th scope='row'>${index+1}</th>
+        <td>${item.studentName}</td>
+        <td>${item.fatherName}</td>
+        <td>${item.rollNumber}</td>
+        <td>${item.courseValue}</td>
+        <td>${item.mobile}</td>
+        <td>${item.cnic}</td>
+        
+    </tr>
+    `
+
+    })
+}

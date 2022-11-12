@@ -1,16 +1,17 @@
 import {adClassToDb, getClassFromFirebase, updateClassFromFirebase, deleteClassFromFirebase} from '../firebase.js';
 
-var classStart = document.getElementById('classStart').value;
-var classEnd = document.getElementById('classEnd').value;
-var schedule = document.getElementById('schedule').value;
-var teacherName = document.getElementById('teacherName').value;
-var section = document.getElementById('section').value;
-var batch = document.getElementById('batch').value;
 
-var courseSelect = document.getElementById('courseSelect');
-var courseValue = courseSelect.options[courseSelect.selectedIndex].value;
+
 window.createClass = async function(){
 
+    var classStart = document.getElementById('classStart').value;
+    var classEnd = document.getElementById('classEnd').value;
+    var schedule = document.getElementById('schedule').value;
+    var teacherName = document.getElementById('teacherName').value;
+    var section = document.getElementById('section').value;
+    var batch = document.getElementById('batch').value;
+    var courseSelect = document.getElementById('courseSelect');
+var courseValue = courseSelect.options[courseSelect.selectedIndex].value;
 
     try{
         await adClassToDb({classStart,classEnd,schedule,teacherName,section,courseValue,batch})

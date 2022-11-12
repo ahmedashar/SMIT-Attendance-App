@@ -71,4 +71,15 @@ function enrollStudentFirebase(studentInfo){
     return addDoc(collection(db,'students'),studentInfo)
 }
 
-export{firebaseSignIn,adClassToDb, getClassFromFirebase, updateClassFromFirebase, deleteClassFromFirebase ,uploadImage, enrollStudentFirebase}
+// get student db
+async function getStudentFromDb(){
+    const querySnapshot = await getDocs(collection(db, 'students'))
+    const allStudent = []
+    
+    querySnapshot.forEach((doc)=>{
+        allStudent.push({id: doc.id, ...doc.data()})
+    });
+    return allStudent
+}
+
+export{firebaseSignIn,adClassToDb, getClassFromFirebase, updateClassFromFirebase, deleteClassFromFirebase ,uploadImage, enrollStudentFirebase, getStudentFromDb}
