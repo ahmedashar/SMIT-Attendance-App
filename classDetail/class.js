@@ -110,3 +110,4 @@ window.updateClass = async function(){
 // schedule:"Mon"
 // section:"A"
 // teacherName:"Sir Kashif"
+export default classInfo;

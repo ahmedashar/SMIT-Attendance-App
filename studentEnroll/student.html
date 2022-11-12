@@ -12,7 +12,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="getAvailableClass()">
     <!-- navbar -->
     <div class="container-fluid nav_main">
         <div class="container nav_items_container">
@@ -33,28 +33,48 @@
             </div>
             <div class="mb-3">
                 <label for="fatherName" class="form-label">Father Name</label>
-                <input type="time" class="form-control" id="fatherName" placeholder="Father Name">
+                <input type="text" class="form-control" id="fatherName" placeholder="Father Name">
             </div>
 
             <div class="mb-3">
                 <label for="rollNumber" class="form-label">Roll Number</label>
-                <input type="text" class="form-control" id="rollNumber" placeholder="class start time">
+                <input type="text" class="form-control" id="rollNumber" placeholder="Roll Number">
             </div>
 
             <div class="mb-3">
-                <label for="teacherName" class="form-label">teacher Name</label>
-                <input type="text" class="form-control" id="teacherName" placeholder="name@example.com">
+                <label for="mobile" class="form-label">Contact No</label>
+                <input type="text" class="form-control" id="mobile" placeholder="Contact No">
             </div>
 
             <div class="mb-3">
-                <label for="section" class="form-label">section</label>
-                <input type="text" class="form-control" id="section" placeholder="A or B" maxlength="1">
+                <label for="cnic" class="form-label">CNIC No</label>
+                <input type="text" class="form-control" id="cnic" placeholder="CNIC No">
             </div>
+            <div class="mb-3">
+                <input type="file" name="" id="studentImg">
+            </div>
+
+            <h5>Select Course</h5>
+            <select id="courseSelect" class="form-select" aria-label="Default select example">
+                <option value="web">web and mobile</option>
+                <option value="graphic">graphic designing</option>
+                <option value="digital">digital marketing</option>
+            </select>
+
+            <h5>Select Class</h5>
+            <select id="classSelect" class="form-select" aria-label="Default select example">
+                <!-- <option value="web">web and mobile</option>
+                <option value="graphic">graphic designing</option>
+                <option value="digital">digital marketing</option> -->
+            </select>
+
+            <button id="enrollStudentBtn" onclick="enrollStudentInDB()">Enroll Student</button>
         </div>
     </div>
 
 
-    <script src="./student.js"></script>
+    <script src="./student.js" type="module"></script>
+    <script src="../firebase.js" type="module"></script>
     <!-- sweet alert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- bootstrap -->

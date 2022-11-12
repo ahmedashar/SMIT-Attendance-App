@@ -2,7 +2,7 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
   import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
   import { getFirestore, addDoc, collection,getDocs,setDoc,doc,deleteDoc } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-firestore.js";
-  import { getStorage } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-storage.js";
+  import { getStorage, uploadBytes,getDownloadURL,ref } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-storage.js";
   
   const firebaseConfig = {
     apiKey: "AIzaSyCk-hhTNVeVX7b8jj28UY_9ldek68xmSqc",
@@ -53,4 +53,22 @@ async function deleteClassFromFirebase(classID){
     await deleteDoc(doc(db, "classes", classID));
 }
 
-export{firebaseSignIn,adClassToDb, getClassFromFirebase, updateClassFromFirebase, deleteClassFromFirebase}
+// ////////////// for studentEnroll
+
+async function uploadImage(stdImg){
+    const storageRef = ref(storage, `images/${stdImg.name}`);
+    const snapshot = await uploadBytes(storageRef, stdImg);
+    const url = await getDownloadURL(snapshot.ref);
+    return url;
+  }
+
+//   function adPostToDb(adTitle,adDes,adPrice,adLocation,imgUrl){
+//     const userId = auth.currentUser.uid
+//     return addDoc(collection(db,'ads'),{adTitle,adDes,adPrice,adLocation,imgUrl,userId})
+//   }
+  
+function enrollStudentFirebase(studentInfo){
+    return addDoc(collection(db,'students'),studentInfo)
+}
+
+export{firebaseSignIn,adClassToDb, getClassFromFirebase, updateClassFromFirebase, deleteClassFromFirebase ,uploadImage, enrollStudentFirebase}
