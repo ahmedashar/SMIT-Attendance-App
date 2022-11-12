@@ -1,7 +1,7 @@
 
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
   import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
-  import { getFirestore, addDoc, collection,getDocs } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-firestore.js";
+  import { getFirestore, addDoc, collection,getDocs,setDoc,doc,deleteDoc } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-firestore.js";
   import { getStorage } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-storage.js";
   
   const firebaseConfig = {
@@ -41,6 +41,16 @@ async function getClassFromFirebase(){
     return allClass
 }
 
+// update perticular class
+async function updateClassFromFirebase(classId, updateValuesObj){
 
+    await setDoc(doc(db, "classes", classId), updateValuesObj
+      );
+}
+// delete perticular class
 
-export{firebaseSignIn,adClassToDb, getClassFromFirebase}
+async function deleteClassFromFirebase(classID){
+    await deleteDoc(doc(db, "classes", classID));
+}
+
+export{firebaseSignIn,adClassToDb, getClassFromFirebase, updateClassFromFirebase, deleteClassFromFirebase}

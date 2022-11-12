@@ -53,7 +53,8 @@
                 <input type="text" class="form-control" id="batch" placeholder="batch">
             </div>
 
-            <button onclick="createClass()">Create Class</button>
+            <button id="createClassBtn" onclick="createClass()">Create Class</button>
+            <button id="updateClassBtn" style="display: none;" onclick="updateClass()">Update Class</button>
         </div>
     </div>
 
@@ -63,13 +64,14 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">S.No</th>
                         <th scope="col">Teacher Name</th>
                         <th scope="col">Course</th>
                         <th scope="col">Batch</th>
                         <th scope="col">Section</th>
                         <th scope="col">Schedule</th>
                         <th scope="col">Timing</th>
+                        <th scope="col">Edit Details</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
