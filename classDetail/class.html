@@ -6,10 +6,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="./home.csss"> -->
+    <!-- bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>class</h1>
+    <h1 class="text-center">Class Information</h1>
+    <div class="container-fluid">
+        <div class="container">
+            <h2>class timing</h2>
+            <div class="mb-3">
+                <label for="classStart" class="form-label">class start</label>
+                <input type="time" class="form-control" id="classStart" placeholder="class start time">
+            </div>
+            <div class="mb-3">
+                <label for="classEnd" class="form-label">class end</label>
+                <input type="time" class="form-control" id="classEnd" placeholder="name@example.com">
+            </div>
+
+            <h2>classes shedule</h2>
+            <div class="mb-3">
+                <label for="schedule" class="form-label">shedule</label>
+                <input type="text" class="form-control" id="schedule" placeholder="class start time">
+            </div>
+            <h2>Teacher Name</h2>
+            <div class="mb-3">
+                <label for="teacherName" class="form-label">teacher Name</label>
+                <input type="text" class="form-control" id="teacherName" placeholder="name@example.com">
+            </div>
+
+            <div class="mb-3">
+                <label for="section" class="form-label">section</label>
+                <input type="text" class="form-control" id="section" placeholder="A or B" maxlength="1">
+            </div>
+
+            <select id="courseSelect" class="form-select" aria-label="Default select example">
+                <option value="web">web and mobile</option>
+                <option value="graphic">graphic designing</option>
+                <option value="digital">digital marketing</option>
+            </select>
+
+            <div class="mb-3">
+                <label for="batch" class="form-label">batch</label>
+                <input type="text" class="form-control" id="batch" placeholder="batch">
+            </div>
+
+            <button onclick="createClass()">Create Class</button>
+        </div>
+    </div>
+
+    <div class="container display_container">
+        <h1 class="text-center">Available Classes</h1>
+        <div class="table" id="table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Teacher Name</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Batch</th>
+                        <th scope="col">Section</th>
+                        <th scope="col">Schedule</th>
+                        <th scope="col">Timing</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <script src="./class.js" type="module"></script>
+    <script src="../firebase.js" type="module"></script>
+
+    <!-- sweet alert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

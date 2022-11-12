@@ -1,7 +1,7 @@
 
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-app.js";
   import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-auth.js";
-  import { getFirestore } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-firestore.js";
+  import { getFirestore, addDoc, collection,getDocs } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-firestore.js";
   import { getStorage } from "https://www.gstatic.com/firebasejs/9.11.0/firebase-storage.js";
   
   const firebaseConfig = {
@@ -25,4 +25,22 @@ function firebaseSignIn(email,password){
     return signInWithEmailAndPassword(auth, email, password)
 }
 
-export{firebaseSignIn}
+// ad class info to db
+function adClassToDb(classInfo){
+    return addDoc(collection(db,'classes'), classInfo)
+}
+
+// get class db 
+async function getClassFromFirebase(){
+    const querySnapshot = await getDocs(collection(db, 'classes'))
+    const allClass = []
+    
+    querySnapshot.forEach((doc)=>{
+    allClass.push({id: doc.id, ...doc.data()})
+    });
+    return allClass
+}
+
+
+
+export{firebaseSignIn,adClassToDb, getClassFromFirebase}

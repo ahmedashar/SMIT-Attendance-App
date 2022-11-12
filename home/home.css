@@ -4,6 +4,24 @@
 html {
   font-size: 62.5%;
 }
+/* nav start */
+.nav_main {
+  background-color: white;
+  border: 1px solid black;
+}
+.nav_items_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.smit-logo {
+  width: 10rem;
+}
+.app_name {
+  font-size: 3rem;
+}
+/* nav end */
+
 .add_class_container {
   border: 2px solid black;
 }
